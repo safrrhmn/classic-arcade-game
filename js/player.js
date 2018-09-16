@@ -1,10 +1,7 @@
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
-var defaultX = 102,
-	defaultY = 85,
-	initX = 200,
-	initY = 400;
+
 
 var Player = function(x, y, speed) {
 	this.x = x;
@@ -22,37 +19,37 @@ Player.prototype.handleInput = function(keyPress) {
 	// Enables user on left arrow key to move left on the x axis by 102
 	// Also enables user not to go off the game tiles on the left side
 	if (keyPress == 'left' && this.x > 0) {
-		this.x -= defaultX;
+		this.x -= VariableHolder.PLAYER.defaultX;
 	}
 
 	// Enables user on right arrow key to move right on the x axis by 102
 	// Also enables user not to go off the game tiles on the right side
-	if (keyPress == 'right' && this.x < (505 - defaultX)) {
-		this.x += defaultX;
+	if (keyPress == 'right' && this.x < (ctx.canvas.width - VariableHolder.PLAYER.defaultX)) {
+		this.x += VariableHolder.PLAYER.defaultX;
 	}
 
 	// Enables user on up arrow key to move upwards on the y axis by 83
 	if (keyPress == 'up' && this.y > 0) {
-		this.y -= defaultY;
+		this.y -= VariableHolder.PLAYER.defaultY;
 	}
 
 	// Enables user on down arrow key to move downwards on the y axis by 83
 	// Also enables user not to go off the game tiles on the bottom side
-	if (keyPress == 'down' && this.y < initY) {
-		this.y += defaultY;
+	if (keyPress == 'down' && this.y < VariableHolder.PLAYER.Y) {
+		this.y += VariableHolder.PLAYER.defaultX;
 	}
 
 	// Once the user reaches the top of the page; the water, the user is
 	// Instantly reset to the starting position
 	if (this.y <= 0) {
 		setTimeout(() => {
-			this.x = initX;
-			this.y = initY;
-		}, 800);
+			this.x = VariableHolder.PLAYER.X;
+			this.y = VariableHolder.PLAYER.defaultY;
+		}, 500);
 	}
 };
 
-var player = new Player(initX, initY);
+var player = new Player(VariableHolder.PLAYER.defaultX, VariableHolder.PLAYER.Y);
 
 // Now write your own player class
 // This class requires an update(), render() and
