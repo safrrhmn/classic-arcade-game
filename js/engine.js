@@ -95,6 +95,10 @@ var Engine = (function (global) {
         checkCollisions();
     }
 
+    /**
+     * Checks if the enemy and player entities collide. 
+     * In case of the collision the player is reset the position to the origanl position
+     */
     function checkCollisions() {
 
         allEnemies.forEach(function (enemy) {
