@@ -20,8 +20,8 @@ var Enemy = function (x, y, speed) {
 };
 
 document.addEventListener('DOMContentLoaded', function () {
-	VariableHolder.Enemies.initialPositionArray.forEach(function (y) {
-		let enemy = new Enemy(0, y, VariableHolder.Enemies.initialSpeed);
+	VariableHolder.ENEMIES.initialPositionArray.forEach(function (y) {
+		let enemy = new Enemy(0, y, VariableHolder.ENEMIES.initialSpeed);
 		allEnemies.push(enemy);
 	});
 })
@@ -46,6 +46,6 @@ Enemy.prototype.update = function (dt) {
 	this.x += this.speed * dt;
 	if (this.x > ctx.canvas.clientWidth) {
 		this.x = -50;
-		this.speed = 100 + Math.floor(Math.random() * VariableHolder.Enemies.initialSpeed);
+		this.speed = 100 + Math.floor(Math.random() * VariableHolder.ENEMIES.initialSpeed);
 	}
 };

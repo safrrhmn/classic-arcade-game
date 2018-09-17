@@ -19,7 +19,7 @@ var VariableHolder = {
         defaultX: 102,
         defaultY: 85
     },
-    Enemies: {
+    ENEMIES: {
         initialPositionArray: [65, 145, 230],
         initialSpeed: 200
     }

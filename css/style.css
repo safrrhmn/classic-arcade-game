@@ -1,3 +1,9 @@
 body {
     text-align: center;
 }
+.alert{
+    width: 505px;
+    height: 100px;
+    margin: auto;
+    text-align: center
+}

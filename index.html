@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Effective JavaScript: Frogger</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+    <div class="alert alert-success alert-dismissible" role="alert" id="success" hidden>
+        <button type="button" class="close" aria-label="Close" id="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>Congratulations!</strong>
+        You have completed the game successfully! Click x to close the alert and reset the game.
+    </div>
+    </div>
     <script src="js/resources.js"></script>
     <script src="js/engine.js"></script>
     <script src="js/enemies.js"></script>
     <script src="js/player.js"></script>
 </body>
+
 </html>
