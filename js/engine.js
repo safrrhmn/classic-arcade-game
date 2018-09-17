@@ -21,9 +21,9 @@ var VariableHolder = {
     },
     ENEMIES: {
         initialPositionArray: [65, 145, 230],
-        initialSpeed: 200
+        initialSpeed: 200,
+        allEnemies: []
     }
-
 }
 
 var Engine = (function (global) {
@@ -101,7 +101,7 @@ var Engine = (function (global) {
      */
     function checkCollisions() {
 
-        allEnemies.forEach(function (enemy) {
+        VariableHolder.ENEMIES.allEnemies.forEach(function (enemy) {
             if (player.x < enemy.x + 80 && player.x + 80 > enemy.x && player.y < enemy.y + 60 && 60 + player.y > enemy.y) {
                 player.x = VariableHolder.PLAYER.X;
                 player.y = VariableHolder.PLAYER.Y;
@@ -110,14 +110,14 @@ var Engine = (function (global) {
     }
 
     /* This is called by the update function and loops through all of the
-     * objects within your allEnemies array as defined in app.js and calls
+     * objects within your VariableHolder.ENEMIES.allEnemies array as defined in app.js and calls
      * their update() methods. It will then call the update function for your
      * player object. These update methods should focus purely on updating
      * the data/properties related to the object. Do your drawing in your
      * render methods.
      */
     function updateEntities(dt) {
-        allEnemies.forEach(function (enemy) {
+        VariableHolder.ENEMIES.allEnemies.forEach(function (enemy) {
             enemy.update(dt);
         });
         player.update();
@@ -173,10 +173,10 @@ var Engine = (function (global) {
      * on your enemy and player entities within app.js
      */
     function renderEntities() {
-        /* Loop through all of the objects within the allEnemies array and call
+        /* Loop through all of the objects within the VariableHolder.ENEMIES.allEnemies array and call
          * the render function you have defined.
          */
-        allEnemies.forEach(function (enemy) {
+        VariableHolder.ENEMIES.allEnemies.forEach(function (enemy) {
             enemy.render();
         });
 
